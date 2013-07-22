@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>AAA</title>
+</head>
+<body style="font-family: Arial">
+    <script type="text/javascript" language="JavaScript">
+
+        var agescore = 0;
+        var bpscore = 0;
+        var tempscore = 0;
+        var genderscore = 0;
+        var vasularcscore = 0;
+        var diabetesscore = 0;
+        var cancerscore = 0;
+        var collapsescore = 0;
+        var backpainscore = 0;
+        var capillaryscore = 0;
+        var totalscore = 0;
+
+        function age(s) {
+            agescore = s;
+            document.getElementById("ageval").innerHTML = s;
+            calcscore();
+            if (s == 0) {
+                document.getElementById("age1").style.backgroundColor = "Red";
+                document.getElementById("age2").style.backgroundColor = "Gainsboro";
+            }
+            else {
+                document.getElementById("age1").style.backgroundColor = "Gainsboro";
+                document.getElementById("age2").style.backgroundColor = "Red";
+            }
+        }
+
+        function bp(s) {
+            bpscore = s;
+            document.getElementById("bpval").innerHTML = s;
+            calcscore();
+            if (s == 4.5) {
+                document.getElementById("bp1").style.backgroundColor = "Red";
+                document.getElementById("bp2").style.backgroundColor = "Gainsboro";
+            }
+            else {
+                document.getElementById("bp1").style.backgroundColor = "Gainsboro";
+                document.getElementById("bp2").style.backgroundColor = "Red";
+            }
+        }
+
+        function temp(s) {
+            tempscore = s;
+            document.getElementById("tempval").innerHTML = s;
+            calcscore();
+            if (s == 8) {
+                document.getElementById("temp1").style.backgroundColor = "Red";
+                document.getElementById("temp2").style.backgroundColor = "Gainsboro";
+                document.getElementById("temp3").style.backgroundColor = "Gainsboro";
+            }
+            else if (s == 4.5) {
+                document.getElementById("temp1").style.backgroundColor = "Gainsboro";
+                document.getElementById("temp2").style.backgroundColor = "Red";
+                document.getElementById("temp3").style.backgroundColor = "Gainsboro";
+            }
+            else {
+                document.getElementById("temp1").style.backgroundColor = "Gainsboro";
+                document.getElementById("temp2").style.backgroundColor = "Gainsboro";
+                document.getElementById("temp3").style.backgroundColor = "Red";
+            }
+        }
+
+        function gender(s) {
+            genderscore = s;
+            document.getElementById("genderval").innerHTML = s;
+            calcscore();
+            if (s == 8.5) {
+                document.getElementById("gender1").style.backgroundColor = "Red";
+                document.getElementById("gender2").style.backgroundColor = "Gainsboro";
+            }
+            else {
+                document.getElementById("gender1").style.backgroundColor = "Gainsboro";
+                document.getElementById("gender2").style.backgroundColor = "Red";
+            }
+        }
+
+        function vasc(s) {
+            vasularcscore = s;
+            document.getElementById("vascval").innerHTML = s;
+            calcscore();
+            if (s == 13) {
+                document.getElementById("vasc1").style.backgroundColor = "Red";
+                document.getElementById("vasc2").style.backgroundColor = "Gainsboro";
+            }
+            else {
+                document.getElementById("vasc1").style.backgroundColor = "Gainsboro";
+                document.getElementById("vasc2").style.backgroundColor = "Red";
+            }
+        }
+
+        function diabetes(s) {
+            diabetesscore = s;
+            document.getElementById("diabetesval").innerHTML = s;
+            calcscore();
+            if (s == 0) {
+                document.getElementById("diabetes1").style.backgroundColor = "Red";
+                document.getElementById("diabetes2").style.backgroundColor = "Gainsboro";
+            }
+            else {
+                document.getElementById("diabetes1").style.backgroundColor = "Gainsboro";
+                document.getElementById("diabetes2").style.backgroundColor = "Red";
+            }
+        }
+
+        function cancer(s) {
+            cancerscore = s;
+            document.getElementById("cancerval").innerHTML = s;
+            calcscore();
+            if (s == 0) {
+                document.getElementById("cancer1").style.backgroundColor = "Red";
+                document.getElementById("cancer2").style.backgroundColor = "Gainsboro";
+            }
+            else {
+                document.getElementById("cancer1").style.backgroundColor = "Gainsboro";
+                document.getElementById("cancer2").style.backgroundColor = "Red";
+            }
+        }
+
+        function collapse(s) {
+            collapsescore = s;
+            document.getElementById("collapseval").innerHTML = s;
+            calcscore();
+            if (s == 0) {
+                document.getElementById("collapse1").style.backgroundColor = "Red";
+                document.getElementById("collapse2").style.backgroundColor = "Gainsboro";
+            }
+            else {
+                document.getElementById("collapse1").style.backgroundColor = "Gainsboro";
+                document.getElementById("collapse2").style.backgroundColor = "Red";
+            }
+        }
+
+        function backpain(s) {
+            backpainscore = s;
+            document.getElementById("backpainval").innerHTML = s;
+            calcscore();
+            if (s == 14) {
+                document.getElementById("backpain1").style.backgroundColor = "Red";
+                document.getElementById("backpain2").style.backgroundColor = "Gainsboro";
+            }
+            else {
+                document.getElementById("backpain1").style.backgroundColor = "Gainsboro";
+                document.getElementById("backpain2").style.backgroundColor = "Red";
+            }
+        }
+
+        function capillary(s) {
+            capillaryscore = s;
+            document.getElementById("capillaryval").innerHTML = s;
+            calcscore();
+            if (s == 0) {
+                document.getElementById("capillary1").style.backgroundColor = "Red";
+                document.getElementById("capillary2").style.backgroundColor = "Gainsboro";
+            }
+            else {
+                document.getElementById("capillary1").style.backgroundColor = "Gainsboro";
+                document.getElementById("capillary2").style.backgroundColor = "Red";
+            }
+        }
+
+        function calcscore() {
+            totalscore = agescore + bpscore + tempscore + genderscore + vasularcscore + diabetesscore + cancerscore + collapsescore + backpainscore + capillaryscore;
+            document.getElementById("totalval").innerHTML = totalscore;
+            if (totalscore >= 42) {
+                document.getElementById("totalval").style.color = "Red";
+            }
+            else {
+                document.getElementById("totalval").style.color = "Black";
+            }
+        }
+
+    </script>
+    <table>
+        <tr>
+            <td style="height: 50px; text-align: center">
+                <button id="age1" onclick="age(0)" style="width: 300px; height: 40px">
+                    Age less or equal 68</button>
+            </td>
+            <td style="height: 50px; text-align: center">
+                <button id="age2" onclick="age(9.5)" style="width: 300px; height: 40px">
+                    Age over 68</button>
+            </td>
+            <td style="width: 200px; height: 50px; text-align: center" id="ageval">
+            </td>
+        </tr>
+        <tr>
+            <td style="height: 50px; text-align: center">
+                <button id="bp1" onclick="bp(4.5)" style="width: 300px; height: 40px">
+                    Systolic blood pressure less or equal 135</button>
+            </td>
+            <td style="text-align: center">
+                <button id="bp2" onclick="bp(0)" style="width: 300px; height: 40px">
+                    Systolic blood pressure over 135</button>
+            </td>
+            <td style="text-align: center" id="bpval">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td style="width: 250px; height: 50px; text-align: center">
+                            <button id="temp1" onclick="temp(8)" style="width: 200px; height: 40px">
+                                Temperature up to 35.9</button>
+                        </td>
+                        <td style="width: 250px; text-align: center">
+                            <button id="temp2" onclick="temp(4.5)" style="width: 200px; height: 40px">
+                                Between 35.9 and 36.8</button>
+                        </td>
+                        <td style="width: 250px; text-align: center">
+                            <button id="temp3" onclick="temp(0)" style="width: 200px; height: 40px">
+                                Temperature over 36.8</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="text-align: center" id="tempval">
+            </td>
+        </tr>
+        <tr>
+            <td style="height: 50px; text-align: center">
+                <button id="gender1" onclick="gender(8.5)" style="width: 300px; height: 40px">
+                    Male</button>
+            </td>
+            <td style="text-align: center">
+                <button id="gender2" onclick="gender(0)" style="width: 300px; height: 40px">
+                    Female</button>
+            </td>
+            <td style="text-align: center" id="genderval">
+            </td>
+        </tr>
+        <tr>
+            <td style="height: 50px; text-align: center">
+                <button id="vasc1" onclick="vasc(13)" style="width: 300px; height: 40px">
+                    Peripheral vascular disease</button>
+            </td>
+            <td style="text-align: center">
+                <button id="vasc2" onclick="vasc(0)" style="width: 300px; height: 40px">
+                    No vascular disease</button>
+            </td>
+            <td style="text-align: center" id="vascval">
+            </td>
+        </tr>
+        <tr>
+            <td style="height: 50px; text-align: center">
+                <button id="diabetes1" onclick="diabetes(0)" style="width: 300px; height: 40px">
+                    Diabetes</button>
+            </td>
+            <td style="text-align: center">
+                <button id="diabetes2" onclick="diabetes(6)" style="width: 300px; height: 40px">
+                    No diabetes</button>
+            </td>
+            <td style="text-align: center" id="diabetesval">
+            </td>
+        </tr>
+        <tr>
+            <td style="height: 50px; text-align: center">
+                <button id="cancer1" onclick="cancer(0)" style="width: 300px; height: 40px">
+                    Cancer</button>
+            </td>
+            <td style="text-align: center">
+                <button id="cancer2" onclick="cancer(14.5)" style="width: 300px; height: 40px">
+                    No cancer</button>
+            </td>
+            <td style="text-align: center" id="cancerval">
+            </td>
+        </tr>
+        <tr>
+            <td style="height: 50px; text-align: center">
+                <button id="collapse1" onclick="collapse(8)" style="width: 300px; height: 40px">
+                    Collapse (reason unknown)</button>
+            </td>
+            <td style="text-align: center">
+                <button id="collapse2" onclick="collapse(0)" style="width: 300px; height: 40px">
+                    No collapse</button>
+            </td>
+            <td style="text-align: center" id="collapseval">
+            </td>
+        </tr>
+        <tr>
+            <td style="height: 50px; text-align: center">
+                <button id="backpain1" onclick="backpain(14)" style="width: 300px; height: 40px">
+                    Back pain</button>
+            </td>
+            <td style="text-align: center">
+                <button id="backpain2" onclick="backpain(0)" style="width: 300px; height: 40px">
+                    No back pain</button>
+            </td>
+            <td style="text-align: center" id="backpainval">
+            </td>
+        </tr>
+        <tr>
+            <td style="height: 50px; text-align: center">
+                <button id="capillary1" onclick="capillary(9.5)" style="width: 300px; height: 40px">
+                    Capillary refill over 2 secs</button>
+            </td>
+            <td style="text-align: center">
+                <button id="capillary2" onclick="capillary(0)" style="width: 300px; height: 40px">
+                    Capillary refill under 2 secs</button>
+            </td>
+            <td style="text-align: center" id="capillaryval">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                F5 to reset
+            </td>
+            <td style="text-align: right; font-size: large; vertical-align: bottom; height: 80px">
+                Total score:
+            </td>
+            <td id="totalval" style="text-align: center; font-size: large; vertical-align: bottom">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
