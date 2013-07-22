@@ -137,6 +137,34 @@
             }
         }
 
+        function backpain(s) {
+            backpainscore = s;
+            document.getElementById("backpainval").innerHTML = s;
+            calcscore();
+            if (s == 14) {
+                document.getElementById("backpain1").style.backgroundColor = "Red";
+                document.getElementById("backpain2").style.backgroundColor = "Gainsboro";
+            }
+            else {
+                document.getElementById("backpain1").style.backgroundColor = "Gainsboro";
+                document.getElementById("backpain2").style.backgroundColor = "Red";
+            }
+        }
+
+        function capillary(s) {
+            capillaryscore = s;
+            document.getElementById("capillaryval").innerHTML = s;
+            calcscore();
+            if (s == 0) {
+                document.getElementById("capillary1").style.backgroundColor = "Red";
+                document.getElementById("capillary2").style.backgroundColor = "Gainsboro";
+            }
+            else {
+                document.getElementById("capillary1").style.backgroundColor = "Gainsboro";
+                document.getElementById("capillary2").style.backgroundColor = "Red";
+            }
+        }
+
         function calcscore() {
             totalscore = agescore + bpscore + tempscore + genderscore + vasularcscore + diabetesscore + cancerscore + collapsescore + backpainscore + capillaryscore;
             document.getElementById("totalval").innerHTML = totalscore;
